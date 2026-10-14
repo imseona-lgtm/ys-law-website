@@ -1,0 +1,6 @@
+assets/images/imseona_*.png
+assets/images/snhw_*.png
+Gemini_Generated*
+.DS_Store
+tools/__pycache__/
+.claude/
