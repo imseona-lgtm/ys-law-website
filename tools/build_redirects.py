@@ -25,6 +25,9 @@ for r in rows:
 <meta http-equiv="refresh" content="0; url=../../{new}">
 <script>location.replace('../../{new}');</script>
 <link rel="stylesheet" href="../../css/style.css">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 <main style="padding:80px 24px;text-align:center;font-family:sans-serif">
@@ -66,6 +69,9 @@ for path,(new,title) in EXTRA.items():
 <meta http-equiv="refresh" content="0; url={up}{new}">
 <script>location.replace('{up}{new}');</script>
 <link rel="stylesheet" href="{up}css/style.css">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 <main style="padding:80px 24px;text-align:center;font-family:sans-serif">
