@@ -54,7 +54,7 @@ for c in cases:
     elif J in I: blocks=[('이 사건의 쟁점',I)]
     else: blocks=[('사건 개요',I),('핵심 쟁점',J)]
     info=''.join(f'<h3 class="detail-info-heading">{h}</h3>\n          <p class="detail-info-text">{para(t)}</p>\n          ' for h,t in blocks)
-    kind=LABEL[c['category']] if c['id'] in ONLY_PRIMARY else ' · '.join(LABEL[t] for t in c['tags'])
+    kind=LABEL[c['category']] if c['id'] in ONLY_PRIMARY else ' ・ '.join(LABEL[t] for t in c['tags'])
     court=E(c['court']) if c['court'] else '—'
     grid=''.join(f'<div class="detail-info-item"><span class="detail-info-label">{l}</span><p class="detail-info-value">{v}</p></div>' for l,v in [('사건 분류',kind),('법원·기관',court),('최종 결과',E(c['result']))])
     strat=f'''<div class="detail-block"><span class="detail-block-icon" aria-hidden="true">{USER_ICON}</span><div class="detail-block-body"><p class="detail-block-label">본 변호사의 전략 <strong>변호사 김용석</strong></p><p class="detail-block-text">{para(c["K"])}</p></div></div>''' if c['K'] else ''
