@@ -30,10 +30,11 @@ def apply(f,title,desc,image):
           f'\n<meta property="og:type" content="website">\n<meta property="og:site_name" content="{BRAND}">'
           f'\n<meta property="og:title" content="{E(title)}">\n<meta property="og:description" content="{E(desc)}">'
           f'\n<meta property="og:url" content="{url}">\n<meta property="og:image" content="{DOMAIN}/{image}">'
+          +('\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">' if image.endswith('og-image.png') else '')
           '\n<meta name="twitter:card" content="summary_large_image">')
     s=s.replace('</title>','</title>'+meta,1)
     open(f,'w',encoding='utf-8').write(s)
-for f,(t,d) in PAGES.items(): apply(f,t,d,'assets/images/hero-graphic.png')
+for f,(t,d) in PAGES.items(): apply(f,t,d,'assets/images/og-image.png')
 n=0
 for f in sorted(glob.glob('case-*.html')):
     s=open(f,encoding='utf-8').read()
