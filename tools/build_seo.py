@@ -4,7 +4,7 @@ E=lambda s:html.escape(s,quote=True)
 DOMAIN='https://kyslaw.com'
 BRAND='변호사 김용석 법률사무소'
 PAGES={
- 'index.html':('변호사 김용석 법률사무소 | 서울 서초 법률 상담','서울 서초구 교대역 인근 변호사 김용석 법률사무소입니다. 민사·형사·이혼·상속·행정 소송 상담과 성공사례, 오시는 길을 안내합니다.'),
+ 'index.html':('변호사 김용석 법률사무소','서초 교대역 민사·형사·이혼·상속·행정 소송 상담'),
  'about.html':('김용석 변호사 소개 | '+BRAND,'고려대학교 법학과 졸업, 사법시험 제51회·사법연수원 제41기 수료. 2013년부터 변호사 김용석 법률사무소 대표변호사. 의뢰인의 고민에는 진심으로, 해결책에는 전문성으로 답합니다.'),
  'practice.html':('업무영역 소개 | '+BRAND,'민사소송, 형사소송, 이혼소송, 상속 관련 소송, 행정소송 및 행정심판 등 변호사 김용석 법률사무소의 업무영역을 소개합니다.'),
  'practice-civil.html':('민사소송 | '+BRAND,'계약, 손해배상, 부동산 등 다양한 민사 분쟁에서 의뢰인의 권리와 이익을 보호합니다. 소 제기부터 변론, 항소까지 민사소송 절차를 안내합니다.'),
@@ -31,7 +31,7 @@ def apply(f,title,desc,image):
           f'\n<meta property="og:title" content="{E(title)}">\n<meta property="og:description" content="{E(desc)}">'
           f'\n<meta property="og:url" content="{url}">\n<meta property="og:image" content="{DOMAIN}/{image}">'
           +('\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">' if image.endswith('og-image.png') else '')
-          '\n<meta name="twitter:card" content="summary_large_image">')
+          +'\n<meta name="twitter:card" content="summary_large_image">')
     s=s.replace('</title>','</title>'+meta,1)
     open(f,'w',encoding='utf-8').write(s)
 for f,(t,d) in PAGES.items(): apply(f,t,d,'assets/images/og-image.png')
