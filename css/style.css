@@ -436,19 +436,11 @@ button { font-family: inherit; cursor: pointer; }
   border-bottom: 1px solid #eef0ee;
 }
 
-.info-link {
-  margin-top: 4px;
-  padding: 10px 0 0;
-  border-top: 1px solid #eef0ee;
-  font-size: 14px;
-  font-weight: 600;
+.info-block h3 a {
+  color: inherit;
 }
 
-.info-link a {
-  color: var(--color-primary);
-}
-
-.info-link a:hover {
+.info-block h3 a:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
