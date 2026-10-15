@@ -40,7 +40,7 @@ for n,r in enumerate(rows,1):  # 이미지: assets/images/imseona_NN.png = 엑�
 cases.sort(key=lambda c:(-int(c['date'].replace('-','')),c['id']))
 pub=[{k:c[k] for k in ('category','tags','title','desc','image','url')} for c in cases]
 open('js/cases-data.js','w',encoding='utf-8').write('const CASES = '+json.dumps(pub,ensure_ascii=False,indent=2)+';\n')
-tpl=open('case-debt-seizure.html',encoding='utf-8').read()
+tpl=open('case-debt-seizure.html',encoding='utf-8').read()  # 머리글/바닥글만 사용
 head=tpl[:tpl.index('<main>')+len('<main>')]
 tail=tpl[tpl.index('</main>'):]
 tail=re.sub(r'<script>.*?</script>\s*','',tail,flags=re.S)
@@ -48,10 +48,6 @@ def para(t): return '<br><br>'.join(E(p.strip()) for p in t.split('\n') if p.str
 USER_ICON='<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3.8a5.8 5.8 0 0 0-3.4 10.5c.7.6 1.1 1.3 1.1 2.1v.4h4.6v-.4c0-.8.4-1.5 1.1-2.1A5.8 5.8 0 0 0 12 3.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 19.3h4M10.8 21h2.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>'
 CHECK='<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 12.3L10.8 14.6L15.5 9.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 for c in cases:
-    if c['url']=='case-debt-seizure.html':
-        t=open(c['url'],encoding='utf-8').read()
-        t=re.sub(r'(<p class="detail-summary">).*?(</p>)',lambda m:m.group(1)+E(c['S'])+m.group(2),t,count=1,flags=re.S)
-        open(c['url'],'w',encoding='utf-8').write(t); continue
     I,J=c['I'],c['J']
     if not J: blocks=[('사건 개요',I)]
     elif I in J: blocks=[('이 사건의 쟁점',J)]
