@@ -448,8 +448,8 @@ button { font-family: inherit; cursor: pointer; }
 
 .info-link-icon {
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 
 .info-block h3 a:hover span {
