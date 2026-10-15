@@ -441,15 +441,15 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .info-link-row {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 8px;
 }
 
 .info-link-icon {
   flex-shrink: 0;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
 }
 
 .info-block h3 a:hover span {
